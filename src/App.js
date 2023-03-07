@@ -1,25 +1,26 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-
+import { BrowserRouter as Router, Route, NavLink, Routes } from 'react-router-dom';
+import MainComponent from './MainComponent';
+import Component1 from './Component1';
+import Component2 from './Component2';
 function App() {
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <MainComponent/>
+      <Routes>
+
+ 
+      <Route  path="/component1" element={<Component1 />}/>
+     
+      <Route  path="/component2" element={<Component2 />}/>
+ 
+      </Routes>
+      {/* <ToastNotification /> */}
+    </Router>
   );
 }
+
 
 export default App;
